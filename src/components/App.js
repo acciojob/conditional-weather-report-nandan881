@@ -1,13 +1,23 @@
+import React, { useState } from 'react';
 
-import React from "react";
-import './../styles/App.css';
+function App() {
+  const [weather, setWeather] = useState({
+    temperature: 25,
+    conditions: 'Sunny',
+  });
 
-const App = () => {
+  const tempStyle = {
+    color: weather.temperature > 20 ? 'red' : 'blue',
+  };
+
   return (
     <div>
-        {/* Do not remove the main div */}
+      <p>
+        Temperature: <span style={tempStyle}>{weather.temperature}</span>
+      </p>
+      <p>Conditions: {weather.conditions}</p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
